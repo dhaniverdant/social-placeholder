@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchUsers } from '../../redux/actions/userActions';
 import UserCard from '../../User Card/UserCard';
+import './Home.scss';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="home-wrapper">
       <UserCard />
     </div>
   )
