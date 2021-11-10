@@ -1,7 +1,19 @@
-.card {
+.card-wrapper {
   width: 10%;
   height: 250px;
-  margin: 10px;
-  background-color: azure;
+}
+
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: bisque;
+  margin: 5px;
+  padding: 5px;
   border-radius: 8px;
+  height: 100%;
+}
+
+.name {
+  font-weight: bold;
 }

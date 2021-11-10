@@ -9,12 +9,16 @@ const UserCard = () => {
     const { id, name, username } = user;
 
     return (
-      <div className="card" key={id}>
-        <div>{name}</div>
-        <div>@{username}</div>
-        <Link to={`/user/${id}`}>
-          <button type="button" className="btn btn-primary">Details</button>
-        </Link>
+      <div className="card-wrapper" key={id}>
+        <div className="card-inner">
+          <div>
+            <div className="name">{name}</div>
+            <div>@{username}</div>
+          </div>
+          <Link to={`/user/${id}`}>
+            <button type="button" className="btn btn-primary">Details</button>
+          </Link>
+        </div>
       </div>
     );
   });
