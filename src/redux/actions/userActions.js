@@ -8,3 +8,11 @@ export const fetchUsers = () => async (dispatch) => {
     payload: response.data,
   });
 };
+
+export const fetchUser = (id) => async (dispatch) => {
+  const response = await userApi.get(`/users/${id}`);
+  dispatch({
+    type: ActionTypes.SELECTED_USER,
+    payload: response.data,
+  });
+};
