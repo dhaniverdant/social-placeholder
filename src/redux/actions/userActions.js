@@ -16,3 +16,10 @@ export const fetchUser = (id) => async (dispatch) => {
     payload: response.data,
   });
 };
+
+export const removeSelectedUser = (user) => {
+  return {
+    type: ActionTypes.REMOVE_SELECTED_USER,
+    payload: user,
+  };
+};
