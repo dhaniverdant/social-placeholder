@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { fetchUser } from '../../redux/actions/userActions';
+import { fetchUser, removeSelectedUser } from '../../redux/actions/userActions';
 
 function UserDetail() {
   const { userId } = useParams();
@@ -10,7 +10,10 @@ function UserDetail() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchUser(userId));
+    if (userId && userId !== "") dispatch(fetchUser(userId));
+    return () => {
+      dispatch(removeSelectedUser());
+    }
   }, [userId]);
 
   return (
